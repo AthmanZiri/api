@@ -9,4 +9,4 @@ gunicorn==19.7.0
 olefile==0.44
 psycopg2==2.7
 whitenoise==3.3.0
-
+wsgiref==0.1.2

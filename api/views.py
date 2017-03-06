@@ -12,6 +12,7 @@ from rest_framework import renderers
 from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
+from rest_framework import filters
 
 
 @api_view(['GET'])
@@ -30,6 +31,9 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 class PostViewSet(viewsets.ModelViewSet):
 	queryset = Post.objects.all()
 	serializer_class = PostSerializer
+	filter_backend = (filters.DjangoFilterBackend, filters.OrderingFilter,)
+	filter_fields = ('category', 'location', )
+	ordering = ('-created', )
 	permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
 	def perform_create(self, serializer):
