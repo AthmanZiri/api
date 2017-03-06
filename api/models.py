@@ -21,8 +21,8 @@ class Post(models.Model):
 	category = models.CharField(max_length=100, choices=CATEGORY, default='')
 	location = models.CharField(max_length=100, choices=LOCATION, default='')
 	image1 = models.ImageField(upload_to='Images/', default='Images/None/No-img.jpg')
-	image2 = models.ImageField(upload_to='Images/', default='Images/None/No-img.jpg')
-	image3 = models.ImageField(upload_to='Images/', default='Images/None/No-img.jpg')
+	# image2 = models.ImageField(upload_to='Images/', default='Images/None/No-img.jpg')
+	# image3 = models.ImageField(upload_to='Images/', default='Images/None/No-img.jpg')
 	owner = models.ForeignKey('auth.User', related_name='posts', on_delete=models.CASCADE)
 	created = models.DateTimeField(auto_now_add=True)
 
