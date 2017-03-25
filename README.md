@@ -49,3 +49,9 @@ Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
 - [Gunicorn](https://warehouse.python.org/project/gunicorn/)
 - [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
 - [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
+
+Do some research on this error:  
+
+File "/usr/local/lib/python2.7/dist-packages/Django-1.11.dev20161021125907-py2.7.egg/django/db/backends/postgresql/base.py",        line 194, in ensure_timezone
+    with self.connection.cursor() as cursor:
+AttributeError: __exit__
